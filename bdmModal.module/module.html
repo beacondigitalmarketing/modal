@@ -1,0 +1,17 @@
+<div class="modal-outer {{ name }}">
+  <div class="modal">
+    <a id="close" href="#0"></a>
+    {% if module.modal_type = "text" %}
+    {{ module.textModal }}
+    {% elsif modal.modal_type = "video_embed" %}
+    <div style="padding:56.25% 0 0 0;position:relative;">
+      <iframe src="{{ module.video_embed_code }}" frameborder="0" allow="fullscreen"
+    allowfullscreen></iframe>
+    </div>
+    
+    {% else %}
+    {{ module.form_embed }}
+    {% endif %}
+  </div>
+</div>
+<span id="clickerName" style="display:none">{{ module.clickerName }}</span>
