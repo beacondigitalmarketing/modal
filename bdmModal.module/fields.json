@@ -1,89 +1,166 @@
 [ {
-  "id" : "2b5f72ac-f597-4e6c-3088-8ec5d34d42a2",
-  "name" : "card",
-  "label" : "Card",
+  "id" : "83636429-e71d-c8ee-64ea-919796aea66b",
+  "name" : "clickerName",
+  "type" : "text",
+  "label" : "Enter ID of the element that will trigger the modal to open",
   "sortable" : false,
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : null,
-    "sorting_label_field" : "f9736637-449e-fb28-92e3-db33615c7a9a",
-    "default" : 3
+  "validation_regex" : "",
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "default" : null
+}, {
+  "id" : "87f3af4e-0818-4f83-ab9b-a25f60d41bbf",
+  "name" : "modal_type",
+  "type" : "choice",
+  "label" : "What type of content is in the modal?",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "choices" : [ [ "text_embed", "Text" ], [ "video_embed", "Video" ], [ "form_embed", "Form" ] ],
+  "default" : null
+}, {
+  "id" : "72f0a759-d523-1310-ddee-a4caaded11a5",
+  "name" : "textModal",
+  "type" : "richtext",
+  "label" : "Rich text field",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "87f3af4e-0818-4f83-ab9b-a25f60d41bbf",
+    "controlling_value_regex" : "text_embed",
+    "operator" : "EQUAL",
+    "access" : null
   },
   "hierarchical" : false,
   "max_depth" : 0,
-  "children" : [ {
-    "id" : "854158f8-6ef2-6545-6bac-437c2acddbb1",
-    "name" : "image",
-    "label" : "Image",
-    "sortable" : false,
-    "required" : false,
-    "locked" : false,
-    "hierarchical" : false,
-    "max_depth" : 0,
-    "resizable" : false,
-    "type" : "image",
-    "default" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    }
-  }, {
-    "id" : "f9736637-449e-fb28-92e3-db33615c7a9a",
-    "name" : "title",
-    "label" : "Title",
-    "sortable" : false,
-    "required" : true,
-    "locked" : false,
-    "validation_regex" : "",
-    "hierarchical" : false,
-    "max_depth" : 0,
-    "allow_new_line" : false,
-    "type" : "text",
-    "default" : "This is a title"
-  }, {
-    "id" : "48792a2c-3377-4a0a-0070-e1a893ae82b3",
-    "name" : "text",
-    "label" : "Text",
-    "sortable" : false,
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "hierarchical" : false,
-    "max_depth" : 0,
-    "allow_new_line" : false,
-    "type" : "text",
-    "default" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
-  } ],
-  "type" : "group",
-  "default" : [ {
-    "image" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    },
-    "title" : "This is a title",
-    "text" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
-  }, {
-    "image" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    },
-    "title" : "This is a title",
-    "text" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
-  }, {
-    "image" : {
-      "src" : "http://placekitten.com/100/100",
-      "alt" : "services_7",
-      "width" : 100,
-      "height" : 100
-    },
-    "title" : "This is a title",
-    "text" : "Contextual advertising can be profitable. It can either pay for your hosting and maintenance costs for you website or it can pay for a lot more."
-  } ]
+  "default" : null
+}, {
+  "id" : "90a13ca1-b83f-b5e1-4414-6c3b7804f01c",
+  "name" : "video_source",
+  "type" : "choice",
+  "label" : "Video Source",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "87f3af4e-0818-4f83-ab9b-a25f60d41bbf",
+    "controlling_value_regex" : "video_embed",
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "choices" : [ [ "vimeo", "Vimeo" ], [ "file_upload", "File Upload" ], [ "iframe", "Youtube, iframe" ] ],
+  "default" : null
+}, {
+  "id" : "dfdb687d-ac98-496f-39d6-59c6416dd433",
+  "name" : "vimeo_embed",
+  "type" : "text",
+  "label" : "Vimeo Embed Code",
+  "help_text" : "if source is  vimeo, do not include the script in the code\nscript src=\"https://player.vimeo.com/api/player.js",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "90a13ca1-b83f-b5e1-4414-6c3b7804f01c",
+    "controlling_value_regex" : "vimeo",
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "placeholder" : "See helper text",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "default" : null
+}, {
+  "picker" : "file",
+  "id" : "aca07a79-c2ce-a345-f1fe-f8d8cef680c1",
+  "name" : "file_field",
+  "type" : "file",
+  "label" : "Upload Video",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "90a13ca1-b83f-b5e1-4414-6c3b7804f01c",
+    "controlling_value_regex" : "file_upload",
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "default" : null
+}, {
+  "id" : "498ca4ff-38a2-429c-53df-6c4a4383cc7e",
+  "name" : "iframe_embed",
+  "type" : "text",
+  "label" : "Youtube, Iframe embed code",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "90a13ca1-b83f-b5e1-4414-6c3b7804f01c",
+    "controlling_value_regex" : "iframe",
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "default" : null
+}, {
+  "id" : "fbd03eb6-df6a-815b-6af9-f00acf281bff",
+  "name" : "form_title",
+  "type" : "text",
+  "label" : "Form Title",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "87f3af4e-0818-4f83-ab9b-a25f60d41bbf",
+    "controlling_value_regex" : "form_embed",
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "default" : null
+}, {
+  "id" : "104985d4-9e39-09e7-2849-7a4484ecc9e3",
+  "name" : "form_embed",
+  "type" : "form",
+  "label" : "Choose a form",
+  "sortable" : false,
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "87f3af4e-0818-4f83-ab9b-a25f60d41bbf",
+    "controlling_value_regex" : "form_embed",
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "hierarchical" : false,
+  "max_depth" : 0,
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form."
+  }
 } ]

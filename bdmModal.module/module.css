@@ -1,52 +1,77 @@
-.modal-outer{
- background-color: rgba(0,0,0,.75);
- width: 100%;
- height: 100%;
- display: -webkit-box;
- display: -ms-flexbox;
- display: flex;
- -webkit-box-align: center;
-     -ms-flex-align: center;
-         align-items: center;
- -webkit-box-pack: center;
-     -ms-flex-pack: center;
-         justify-content: center;
- position: fixed;
- top: 0;
- opacity: 0;
- z-index: -1000;
- visibility: hidden;
- -webkit-transition: 300ms all ease-in;
- transition: 300ms all ease-in
-  
+.modal-outer {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1000;
+  visibility: hidden;
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out;
 }
-.modal-outer.visible{
- opacity: 1;
- visibility: visible;
- z-index: 1000;
+.modal-outer.visible {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10000;
 }
-.modal{
- padding: 40px;
- margin: 20px;
- background: white;
- max-width: 500px;
- position: relative;
- -webkit-transform: scale(0);
-         transform: scale(0);
- -webkit-transition: all 300ms ease-in-out;
- transition: all 300ms ease-in-out;
- border-radius: 10px
-  
+.modal {
+  padding: 40px;
+  margin: 20px;
+  background: white;
+  max-width: 500px;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+
+  border-radius: 10px;
 }
-.visible .modal{
- -webkit-transform: scale(1);
-         transform: scale(1)
+.modal.video,
+.modal.form {
+  width: 100%;
+  max-width: 700px;
+  padding: 30px;
 }
-.modal a{
- background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/974870/fancybox_sprite.png');
- height: 36px;
- width: 36px;
- position: absolute;
- top: 1%;
- right: 1%
+.visible .modal {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 1300ms ease, opacity 100ms ease;
+  transition: all 1300ms ease, opacity 100ms ease;
+}
+.modal #close {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/974870/fancybox_sprite.png");
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+.modal #close:focus {
+  border: 1px dashed teal;
+}
+.modal iframe,
+.modal video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
