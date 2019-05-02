@@ -15,3 +15,5 @@ This is super simple. Add the module to your page,  find the CTA or whatever you
 `<button id="clickThis">CLICK, RICK</button>`
 Then, pop that ID into the module.
 After that it is all gravy.  Select what kind of content you want and the relevant fields will appear
+
+![Module Gif](https://cdn2.hubspot.net/hubfs/5023859/modal/module-fields.gif)
