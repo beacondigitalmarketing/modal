@@ -1,6 +1,6 @@
 <div class="modal-outer">
   <div class="modal 
-              {% if module.modal_type == "video_embed" %} video {%elif module.modal_type == "form_embed" %} form {% endif %}" >
+    {% if module.modal_type == "video_embed" %} video {%elif module.modal_type == "form_embed" %} form {% endif %}" >
     <a id="close" href="#0" aria-label="close"></a>
     {% if module.modal_type == "text_embed" %}
       {{ module.textModal }}
